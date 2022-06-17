@@ -1,0 +1,7 @@
+<h2>Search Component</h2>
+<form [formGroup]="searchForm">
+    <input formControlName="search" placeholder="Search Something">
+</form>
+<div *ngFor="let art of result">
+    {{art.title}}
+</div>

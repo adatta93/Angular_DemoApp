@@ -1,0 +1,20 @@
+<h2>Home Component</h2>
+<br>
+<h3>Structural Directive</h3>
+<p *myRepeat="2">I am being repeated...</p>
+<h3>Attribute Directive</h3>
+<p [myMessage]="myMsg">Click Here</p>
+<br>
+<select [(ngModel)]="sortOptions">
+    <option value="prodName">Product Name</option>
+    <option value="price">Product Price</option>
+</select>
+<div *ngFor="let prod of productList | sort:sortOptions">
+    {{prod.name}} - {{prod.price}}
+</div>
+<br>
+#------Observable Value------#
+<div *ngFor="let val of myArray">{{val}}</div>
+<div>Error: {{errors}}</div>
+<div>Finished: {{finished}}</div>
+<button (click)="fetchData()">Fetch</button>

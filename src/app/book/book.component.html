@@ -1,0 +1,21 @@
+<h2>Available Books</h2>
+<ul>
+    <li *ngFor="let book of books">
+        <span>{{book.id}}</span> - <span>{{book.name}}</span>
+    </li>
+</ul>
+<br>
+<h3>Add Book</h3>
+<input #newBook placeholder="Enter A Book Name">
+<button (click)="addBook(newBook.value); newBook.value=''">Add Book</button>
+<br>
+<h3>Delete A Book</h3>
+<input type="number" #bookId placeholder="Enter Book Id to Delete">
+<button (click)="deleteBook(bookId.value);">Delete</button>
+<br>
+<h3>Update A Book</h3>
+<input type="number" #updateId placeholder="Enter Book Id">
+<input #updateName placeholder="Enter Book Name">
+<button (click)="updateBook(updateId.value, updateName.value)">Update</button>
+<br>
+<div *ngIf="errMsg">{{errMsg|json}}</div>

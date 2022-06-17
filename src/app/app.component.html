@@ -1,0 +1,21 @@
+<div style="text-align: center;">
+<h3><a routerLink="search">Search</a></h3>
+<h1>Welcome to {{title}}</h1>
+<input [(ngModel)]="data">
+<app-child [msg]="data" (onRegister)="register($event)"></app-child>
+Message: {{message}}
+<br>
+Counter: {{counter}}
+<div style="border: 1px solid black;height: 10px;">
+  <div style="background-color: aqua;height: 8px;" [style.width.%]="percent" id="bar"></div>
+</div>
+<nav>
+  <ul>
+    <li><button (click)="chooseBook()">Book</button></li>
+    <li><button (click)="chooseHello()">Home</button></li>
+  </ul>
+</nav>
+<app-home *ngIf="isHello"></app-home>
+<app-book *ngIf="isBook"></app-book>
+</div>
+<router-outlet></router-outlet>
